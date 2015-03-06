@@ -1,0 +1,46 @@
+import java.awt.Color;
+import java.awt.EventQueue;
+import java.awt.Graphics;
+import java.awt.Point;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+
+    public class Square extends JPanel{
+
+        private List<Point> fillCells;
+
+        public Square() {
+            fillCells = new ArrayList<>(25);
+        }
+
+        @Override
+        protected void paintComponent(Graphics g) {
+            super.paintComponent(g);
+            
+
+    }
+
+    public static void main(String[] a) {
+        EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+                } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
+                }
+
+                Square grid = new Square();
+                JFrame window = new JFrame();
+                window.setSize(840, 560);
+                window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                window.add(grid);
+                window.setVisible(true);
+
+            }
+        });
+    }
+   }

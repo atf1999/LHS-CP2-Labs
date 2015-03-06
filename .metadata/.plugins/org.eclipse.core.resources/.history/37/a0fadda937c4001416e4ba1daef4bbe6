@@ -1,0 +1,30 @@
+import java.awt.*;
+import javax.swing.*;
+public class Square{
+   public static void main(String[] a) {
+      JFrame f = new JFrame();
+      f.setTitle("Drawing Graphics in a Frame"
+         +" by Adding a Component");
+      f.setBounds(100,50,500,300);
+      f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      f.getContentPane().add(new MyComponent());
+      f.setVisible(true);
+   }
+   static class MyComponent extends JComponent {
+      private static int X = 20, Y = 10;
+	  Color[]schema = new Color[]{Color.BLACK, Color.WHITE, 
+			  Color.BLACK, Color.WHITE, 
+			  Color.BLACK, Color.WHITE, 
+			  Color.BLACK, Color.WHITE, 
+			  Color.BLACK}; 
+      public void paint(Graphics g) {
+           for(int i = 0; i < 3; ++i)
+		       for(int j = 0; i < 3; ++j){
+        	   g.setColor(schema[i + j]);
+        	   g.fillRect(X,Y,100,60);
+        	   X += 100;
+      }
+           Y += 60;
+      }
+   }
+}

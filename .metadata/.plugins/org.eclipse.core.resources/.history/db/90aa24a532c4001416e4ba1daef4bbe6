@@ -1,0 +1,9 @@
+import javax.swing.*;
+
+import java.awt.*;
+public class Square {
+	 public void paint(Graphics g) {
+         g.drawRect(20,10,100,60);
+      System.out.println(g);
+	 }
+}

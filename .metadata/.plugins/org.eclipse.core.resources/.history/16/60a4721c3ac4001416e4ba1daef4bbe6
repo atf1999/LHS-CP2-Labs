@@ -1,0 +1,51 @@
+import java.awt.*;
+import javax.swing.*;
+public class Square{
+   public static void main(String[] a) {
+      JFrame f = new JFrame();
+      f.setTitle("Drawing Graphics in a Frame"
+         +" by Adding a Component");
+      f.setBounds(100,50,500,300);
+      f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      f.getContentPane().add(new Draw());
+      f.setVisible(true);
+   }
+   static class Draw extends JComponent {
+      private static int X = 20, Y = 10;
+	  Color[]schema = new Color[]{Color.BLACK, Color.WHITE, 
+			  Color.BLACK, Color.WHITE, 
+			  Color.BLACK, Color.WHITE, 
+			  Color.BLACK, Color.WHITE, 
+			  Color.BLACK, Color.WHITE};
+      public void paint(Graphics g) {
+               
+    	       g.setColor(schema[0]);
+               g.fillRect(20, 10, 100, 100);
+               
+               g.setColor(schema[1]);
+               g.fillRect(120, 110, 100, 100);
+               
+               g.setColor(schema[2]);
+               g.fillRect(220, 210, 100, 100);
+               
+               g.setColor(schema[3]);
+               g.fillRect(320, 310, 100, 100);
+               
+               g.setColor(schema[4]);
+               g.fillRect(420, 410, 100, 100);
+               
+               g.setColor(schema[5]);
+               g.fillRect(520, 510, 100, 100);
+               
+               g.setColor(schema[6]);
+               g.fillRect(620, 610, 100, 100);
+               
+               g.setColor(schema[7]);
+               g.fillRect(720, 710, 100, 100);
+               
+               g.setColor(schema[8]);
+               g.fillRect(820, 810, 100, 100);
+      }
+      }
+      
+   }

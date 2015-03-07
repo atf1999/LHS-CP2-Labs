@@ -1,0 +1,36 @@
+import javax.swing.*;
+
+import java.awt.*;
+import javax.swing.*;
+public class CheckerBoard {
+    private static Color[] schema = new Color[65];
+    public static int X = 0, Y = 0;
+	public static void main(String[] a) {
+		for(int k = 0; k < schema.length - 1; ++k){schema[k] = Color.BLACK; schema[k + 1] = Color.RED;}
+	  JFrame f = new JFrame();
+      f.setTitle("Drawing Graphics in a Frame"
+         +" by Adding a Component");
+      f.setBounds(100,50,800,800);
+      f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      f.getContentPane().add(new MyComponent());
+      f.setVisible(true);
+   }
+   static class MyComponent extends JComponent {
+	   
+       public void draw(Graphics g){
+    	   for(int i = 0; i < 8; ++i){
+       	    for(int j = 0; j < 8; ++j){
+       	    	g.setColor(schema[i+j]);
+       	    	g.fillRect(X, Y, 100,100);
+       	    	X += 100;
+       	    
+       	    }
+       	    Y += 200;
+    	   }
+       }
+	   public void paint(Graphics g) {
+        draw(g);
+      }
+      }
+   }
+

@@ -1,0 +1,27 @@
+import javax.swing.*;
+
+import java.awt.*;
+import java.awt.geom.Rectangle2D;
+public class CheckerBoard extends JPanel {
+    //frame for program
+	private static JFrame frame = new JFrame("CheckerBoard");
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        frame.setVisible(true);
+        frame.setSize(1000, 1000);
+	}
+	public void paint(Graphics g){
+		 Graphics2D g2 = (Graphics2D) g;
+		    g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+		        RenderingHints.VALUE_ANTIALIAS_ON);
+
+		    g2.setPaint(Color.gray);
+		    int x = 5;
+		    int y = 7;
+
+		    g2.setPaint(Color.red);
+		    g2.fill(new Rectangle2D.Double(x, y, 200, 200));	
+	}
+
+}

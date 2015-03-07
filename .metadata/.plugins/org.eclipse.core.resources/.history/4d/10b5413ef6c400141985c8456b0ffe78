@@ -1,0 +1,63 @@
+import javax.swing.*;
+
+import java.awt.*;
+import javax.swing.*;
+public class CheckerBoard {
+    private static Color[] schema = new Color[]{Color.BLACK, Color.RED,
+    	                                        Color.BLACK, Color.RED,
+    	                                        Color.BLACK, Color.RED,
+    	                                        Color.BLACK, Color.RED,
+    	                                        Color.BLACK, Color.RED,
+    	                                        Color.BLACK, Color.RED,
+    	                                        Color.BLACK, Color.RED,
+    	                                        Color.BLACK, Color.RED,
+    	                                        Color.BLACK, Color.RED,
+    	                                        Color.BLACK, Color.RED,};
+    public static int X = 0, Y = 0;
+    public static int yCoord = 0;
+	public static void main(String[] a) {
+		
+	  JFrame f = new JFrame();
+      f.setTitle("Drawing Graphics in a Frame"
+         +" by Adding a Component");
+      f.setBounds(100,50,800,800);
+      f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      f.getContentPane().add(new MyComponent());
+      f.setVisible(true);
+   }
+   static class MyComponent extends JComponent {
+	   
+       public void draw(Graphics g){
+    	   for(int j = 0; j < 9; ++j){
+     	    	g.setColor(schema[j]);
+     	    	g.fillRect(0, yCoord, 100,100);
+     	    	g.setColor(schema[j+1]);
+     	    	g.fillRect(100, yCoord, 100, 100);
+     	    	g.setColor(schema[j+2]);
+     	    	g.fillRect(200, yCoord, 100,100);
+     	    	g.setColor(schema[j+3]);
+     	    	g.fillRect(300, yCoord, 100, 100);
+          	    g.setColor(schema[j+4]);
+          	    g.fillRect(400, yCoord, 100,100);
+          	    g.setColor(schema[j+5]);
+          	    g.fillRect(500, yCoord, 100, 100);
+          	    g.setColor(schema[j+6]);
+          	    g.fillRect(600, yCoord, 100,100);
+          	    g.setColor(schema[j+7]);
+          	    g.fillRect(700, yCoord, 100, 100);
+          	    yCoord += 100;
+    		   
+       	    
+    	   }
+       }
+	   public void paint(Graphics g) {
+		  
+		   draw(g);
+           	    
+           	    }
+      	    
+      	    }
+      }
+      
+   
+

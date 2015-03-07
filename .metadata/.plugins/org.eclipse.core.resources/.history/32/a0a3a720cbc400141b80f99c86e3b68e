@@ -1,0 +1,23 @@
+import javax.swing.*;
+
+import java.awt.*;
+import java.awt.geom.Rectangle2D;
+public class CheckerBoard {
+    //frame for program
+	private static JFrame frame = new JFrame("CheckerBoard");
+	//Panel
+	private static JPanel panel = new JPanel();
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        panel.add(new Draw());
+		frame.add(panel);
+        frame.setVisible(true);
+        frame.setSize(1000, 1000);
+	}
+	static class Draw extends JComponent{
+	    public Draw(){}
+		public void paint(Graphics g){
+			g.drawRect(20,10,100,60);
+	}
+	}
+}

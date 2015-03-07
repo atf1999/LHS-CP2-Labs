@@ -1,0 +1,37 @@
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.GridLayout;
+
+import javax.swing.*;
+public class OpticalIllusion {
+    //frame
+	private static JFrame frame = new JFrame("Optical Illusion");
+    //Coords
+	public static int Loc1 = 0, Loc2 = 0;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        frame.setSize(700, 700);
+        frame.getContentPane().setSize(frame.getWidth(), frame.getHeight());
+        frame.getContentPane().setPreferredSize(new Dimension(frame.getWidth(), frame.getHeight()));
+	    frame.getContentPane().setLayout(new GridLayout(0, 2));
+	    frame.getContentPane().add(new Draw(Color.BLACK, frame.getWidth()/2, frame.getHeight()/2,frame.getWidth()/4, frame.getHeight()/4));
+	    frame.getContentPane().add(new Draw(Color.BLACK, frame.getWidth()/2, frame.getHeight()/2,frame.getWidth() + frame.getWidth()/2, frame.getHeight() + frame.getHeight()/2));
+	    frame.setVisible(true);
+	}
+	static class Draw extends JPanel{
+		public Draw(Color c, int x, int y, int loc1, int loc2){
+			this.setBackground(c);
+			this.setSize(x, y);
+			Loc1 = loc1;
+			Loc2 = loc2;
+			
+			this.setPreferredSize(new Dimension(x, y));
+		}
+		public void paint(Graphics g){
+			g.setColor(Color.RED);
+			g.fillRect(Loc1, Loc2, 100, 100);
+		}
+	}
+
+}

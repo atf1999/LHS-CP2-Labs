@@ -24,8 +24,8 @@ public class CheckerBoard {
       f.setSize(500, 500);
       f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       //the pane is wierd so i made it big for security
-      f.getContentPane().setSize(1000, 1000);
-      f.getContentPane().setPreferredSize(new Dimension(1000, 1000));
+      f.getContentPane().setSize(6000, 6000);
+      f.getContentPane().setPreferredSize(new Dimension(6000, 6000));
       f.getContentPane().add(new MyComponent());
       f.setVisible(true);
    }

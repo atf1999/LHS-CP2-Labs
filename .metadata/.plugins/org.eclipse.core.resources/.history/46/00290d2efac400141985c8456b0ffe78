@@ -17,45 +17,28 @@ public class IOBoxes {
 	    	                                        Color.BLACK, Color.RED,
 	    	                                        Color.BLACK, Color.RED,
 	    	                                        Color.BLACK, Color.RED,};
-        private static JFrame frame = new JFrame("Dynamic checkerboard");
-		public static void main(String[] args){
-    	 //Get the rows user wants
+    public static void main(String[] args){
     	 String temp = JOptionPane.showInputDialog(null, "Number of rows on the checkerboard");
     	 row = Integer.parseInt(temp);
     	 
-    	 //Get the columns the user wants
     	 temp = JOptionPane.showInputDialog(null, "Number of columns on the checkerboard");
     	 column = Integer.parseInt(temp);
-    	 
-    	 //create frame and content pane
-    	 frame.setSize(500, 500);
-    	 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    	 frame.getContentPane().setSize(frame.getWidth(), frame.getWidth());
-    	 frame.getContentPane().setPreferredSize(new Dimension(frame.getWidth(), frame.getWidth()));
-    	 frame.getContentPane().add(new Draw());
-    	 frame.setVisible(true);
-    	 
-    	 
-    	 
-    	 
     	 
      }
 	static class Draw extends JComponent{
 		public void draw(Graphics g){
 			for(int a = 0; a < row; ++a){
-				for(int b = column; b > 0; --b){
+				for(int b = 0; b < column; ++b){
 					g.setColor(schema[a+b]);
 					g.fillRect(X, Y, 50, 50);
 					X += 50;
-					
 				}
-				X = 0;
 				Y += 50;
 			}
 			
 		}
 		public void paint(Graphics g){
-		    draw(g);	
+			
 		}
 	}
 }

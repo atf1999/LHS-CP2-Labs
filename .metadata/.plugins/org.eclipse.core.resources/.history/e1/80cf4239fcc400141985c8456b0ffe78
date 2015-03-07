@@ -46,6 +46,7 @@ public class IOBoxes {
 				for(int b = column; b > 0; --b){
 					g.setColor(schema[a+b]);
 					g.fillRect(X, Y, 50, 50);
+					System.out.println("There are " + column + " squares");
 					X += 50;
 					
 				}

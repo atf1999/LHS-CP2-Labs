@@ -13,35 +13,29 @@ public class CenterPoint implements ComponentListener{
 	  //Holds Coords
       private static double X = 0, Y = 0;
       public CenterPoint(){
-    	  frame.setSize(1000, 1000);
-    	  frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    	  //used for absolute positioning
+    	  //frame.addComponentListener(this);
     	  pane.setLayout(null);
-    	  //used both methods so everything is in order
     	  pane.setPreferredSize(new Dimension(frame.getWidth(), frame.getHeight()));
     	  pane.setSize(frame.getWidth(), frame.getHeight());
-    	  //used to set the coord vars, label text, and label cords
-    	  OnSize();
-    	  //adds every thing that is needed
+    	  
+    	  X = pane.getWidth()/2;
+    	  Y = pane.getHeight()/2;
+    	  label.setText("X: " + X + ", " + "Y: " + Y);
+    	  label.setBounds((int)X, (int)Y, 200, 200);
+    	  
     	  pane.add(label);
     	  frame.addComponentListener(this);
     	  frame.add(pane);
     	  frame.setVisible(true);
       }
       public static void main(String[] args){
+    	  frame.setSize(1000, 1000);
+    	  frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     	  new CenterPoint();
     	  
     	  
       }
-      public void OnSize(){
-    	  //obtain center coords
-    	  X = pane.getWidth()/2;
-    	  Y = pane.getHeight()/2;
-    	  //sets text
-    	  label.setText("X: " + X + ", " + "Y: " + Y);
-    	  //sets size and coords
-    	  label.setBounds((int)X, (int)Y, 200, 200);
-      }
+      
 	@Override
 	public void componentHidden(ComponentEvent e) {
 		// TODO Auto-generated method stub
@@ -55,8 +49,10 @@ public class CenterPoint implements ComponentListener{
 	@Override
 	public void componentResized(ComponentEvent e) {
 		// TODO Auto-generated method stub
-		//Used to update once resized
-		OnSize();
+		  X = pane.getWidth()/2;
+    	  Y = pane.getHeight()/2;
+    	  label.setText("X: " + X + ", " + "Y: " + Y);
+    	  label.setBounds((int)X, (int)Y, 200, 200);
 	}
 	@Override
 	public void componentShown(ComponentEvent e) {

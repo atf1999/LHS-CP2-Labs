@@ -36,10 +36,9 @@ public class CenterPoint implements ComponentListener{
       public void OnSize(){
     	  //obtain center coords
     	  X = pane.getWidth()/2;
+    	  
     	  Y = pane.getHeight()/2;
-    	  //sets text
     	  label.setText("X: " + X + ", " + "Y: " + Y);
-    	  //sets size and coords
     	  label.setBounds((int)X, (int)Y, 200, 200);
       }
 	@Override
@@ -55,7 +54,6 @@ public class CenterPoint implements ComponentListener{
 	@Override
 	public void componentResized(ComponentEvent e) {
 		// TODO Auto-generated method stub
-		//Used to update once resized
 		OnSize();
 	}
 	@Override

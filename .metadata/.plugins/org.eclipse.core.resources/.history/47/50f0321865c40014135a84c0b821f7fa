@@ -1,0 +1,19 @@
+import java.awt.*;
+import javax.swing.*;
+public class test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        JFrame frame = new JFrame("Test");
+        frame.setSize(1000, 1000);
+        JPanel pane = new JPanel(), newa = new JPanel();
+        pane.setPreferredSize(new Dimension(200, 200));
+        pane.setSize(200, 200);
+        pane.setBackground(Color.BLACK);
+        newa.add(pane);
+        frame.add(newa);
+        frame.setVisible(true);
+        
+	}
+
+}

@@ -1,0 +1,27 @@
+import java.awt.*;
+import javax.swing.*;
+public class test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        JFrame frame = new JFrame("Test");
+        frame.setSize(1000, 1000);
+        JPanel pane = new JPanel(), newa = new JPanel(), pane2 = new JPanel();
+        pane.setPreferredSize(new Dimension(200, 200));
+        pane.setSize(200, 200);
+        pane.setBackground(Color.BLACK);
+        
+        GridLayout layout = new GridLayout(3, 2);
+        //newa.setLayout(layout);
+        pane2.setPreferredSize(new Dimension(100, 100));
+        pane2.setSize(200, 200);
+        pane2.setBackground(Color.BLUE);
+        
+        newa.add(pane);
+        newa.add(pane2);
+        frame.add(newa);
+        frame.setVisible(true);
+        
+	}
+
+}

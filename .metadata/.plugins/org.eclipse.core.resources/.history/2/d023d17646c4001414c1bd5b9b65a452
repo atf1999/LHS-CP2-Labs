@@ -1,0 +1,10 @@
+import java.util.Scanner;
+public class SphereCalcs {
+    //Used to hold the console inputs
+	private static Scanner scan;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        
+	}
+
+}

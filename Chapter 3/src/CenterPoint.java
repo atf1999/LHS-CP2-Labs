@@ -1,0 +1,60 @@
+import java.awt.*;
+import java.awt.event.ComponentEvent;
+import java.awt.event.ComponentListener;
+
+import javax.swing.*;
+public class CenterPoint implements ComponentListener{
+      //Project frame
+	  private static JFrame frame = new JFrame("Center point of Panel");
+      //Panel from which we are to find to center
+	  private static JPanel pane = new JPanel();
+	  //Label to display the point
+      private static JLabel label = new JLabel();
+	  //Holds Coords
+      private static double X = 0, Y = 0;
+      public CenterPoint(){
+    	  //frame.addComponentListener(this);
+    	  pane.setLayout(null);
+    	  pane.setPreferredSize(new Dimension(frame.getWidth(), frame.getHeight()));
+    	  pane.setSize(frame.getWidth(), frame.getHeight());
+    	  OnSize();
+    	  pane.add(label);
+    	  frame.addComponentListener(this);
+    	  frame.add(pane);
+    	  frame.setVisible(true);
+      }
+      public static void main(String[] args){
+    	  frame.setSize(1000, 1000);
+    	  frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    	  new CenterPoint();
+    	  
+    	  
+      }
+      public void OnSize(){
+    	  X = pane.getWidth()/2;
+    	  Y = pane.getHeight()/2;
+    	  label.setText("X: " + X + ", " + "Y: " + Y);
+    	  label.setBounds((int)X, (int)Y, 200, 200);
+      }
+	@Override
+	public void componentHidden(ComponentEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void componentMoved(ComponentEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void componentResized(ComponentEvent e) {
+		// TODO Auto-generated method stub
+		OnSize();
+	}
+	@Override
+	public void componentShown(ComponentEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+      
+}

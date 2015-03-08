@@ -1,0 +1,30 @@
+package LabOne;
+
+import java.util.HashMap;
+
+public class Student {
+    private static HashMap<Integer, Integer>testMapping;
+    private static String name = "";
+ 	 public Student(){
+ 		testMapping = new HashMap<Integer, Integer>();
+      }
+ 	 public void setName(String n){this.name = n;}
+ 	 public String getName(){return this.name;}
+ 	 public void setTest(int test, int score){testMapping.put(test, score);}
+     public String validateData(){
+    	 if(name == null){return "No name was entered";}
+    	 else if(!this.testValidate()){return "An invalid test number was given";}
+    	 else{return null;}
+     }
+     private boolean testValidate(){
+    	 for(int i = 0; i < testMapping.size(); ++i){
+    		 if(testMapping.get(i) > 0 && testMapping.get(i) < 100){
+    			 
+    		 }
+    		 else{
+    			 return false;
+    		 }
+    	 }
+		return true;
+     }
+}

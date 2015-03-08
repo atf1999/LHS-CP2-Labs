@@ -1,0 +1,23 @@
+package LabOne;
+
+public class Student {
+	private static String name;
+ 	public static int testNum, testScore; 
+    public Student(){
+    	name = "";
+    	testNum = 0, testScore = 0;
+      }
+ 	 public void setName(String n){this.name = n;}
+ 	 public String getName(){return name;}
+ 	 public void setTest(int test, int score){this.testNum = test; this.testScore = score;}
+     public String validateData(){
+    	 if(name != null && testValidate()){return null;}
+    	 else{return "Error";}
+     }
+     private boolean testValidate(){
+    		 if(this.testScore > 0 || this.testScore < 100){return true;}
+    		 else if(this.testScore < 0 || this.testScore > 100){return false;}
+    	     return false;
+		
+     }
+}
